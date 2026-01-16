@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bgChange 35s infinite;
+  filter: brightness(0.8); /* replaces dark overlay */
+}
+
+@keyframes bgChange {
+    0% {
+        background-image: url("images/background.jpg");
+    }
+    16% {
+        background-image: url("images/bg2.avif");
+    }
+    32% {
+        background-image: url("images/bg3.jpg");
+    }
+    48% {
+        background-image: url("images/bg4.jpg");
+    }
+    64% {
+        background-image: url("images/bg5.jpg");
+    }
+    80% {
+        background-image: url("images/bg6.jpg");
+    }
+    100% {
+        background-image: url("images/bg7.jpeg");
+    }
+}
+
+.main {
+  width: min(90vw, 420px);
+  height: auto;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15); 
+  border: 2px solid rgba(255, 255, 255, 0.15); 
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.main h3 {
+    margin-left: 36%;
+    margin-top: 20px;
+    color: orange;
+    font-size: 30px;
+    font-weight: bold;
+    width: 120px;
+    background-color: yellow;
+}
+
+form input {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto 20px;
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+form input:hover {
+    transform: scale(1.03);
+}
+
+.username {
+    position: relative;
+}
+
+.username i {
+    position: absolute;
+    left: 70px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+.username input {
+    padding-left: 35px;  /* space for icon */
+}
+
+.password {
+    position: relative;
+}
+
+.password i {
+    position: absolute;
+    left: 70px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: #555;
+}
+
+.password input {
+    padding-left: 35px;  /* space for icon */
+}
+
+.welcome {
+    position: relative;
+    width: 70px;      /* decrease image size here */
+    height: 150px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.welcome img {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-fit: cover;
+    background: transparent;
+    transition: 0.3 ease;
+}
+
+.welcome img:hover {
+    content: url(images/hii2.png);
+}
+button {
+  margin-left: 40%;
+  margin-bottom: 40px;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(225, 155, 26);
+  border: none;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: rgb(62, 199, 62);
+  color: white;
+}
+
+
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .main {
+    width: 95vw;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .main h3 {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    font-size: 24px;
+  }
+
+  form input {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .username i,
+  .password i {
+    left: 10%;
+  }
+
+  .welcome {
+    width: 60px;
+    height: 120px;
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100px;
+    height: 40px;
+  }
+}
+
+/*
+   TABLETS (481px – 768px)
+*/
+@media (max-width: 768px) {
+
+  .main {
+    width: 80vw;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .main h3 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  form input {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .username i,
+  .password i {
+    left: 12%;
+  }
+
+  button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+/* 
+   SMALL LAPTOPS (769px – 1024px)
+*/
+@media (max-width: 1024px) {
+
+  .main {
+    width: min(85vw, 420px);
+    height: auto;
+  }
+
+  form input {
+    width: 260px;
+  }
+}
+

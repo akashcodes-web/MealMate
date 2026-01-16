@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    {%load static%}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel ="stylesheet" href="{% static 'signup.css' %}">
+</head>
+<body>
+        <div class="main">
+            <h3>SIGN UP</h3>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+    
+                <div class="username">
+                    <i class="fa-duotone fa-solid fa-circle-user"></i>
+                    <input type="text" name = "username" placeholder="USERNAME">
+                </div>
+    
+                <div class="password">
+                    <i class="fa-duotone fa-solid fa-key"></i>
+                    <input type="password" name="password" placeholder="PASSWORD">
+                </div>
+    
+                <div class="email">
+                    <i class="fa-brands fa-google"></i>
+                    <input type="email" name="email" placeholder="EMAIL">
+                </div>
+                
+                <div class="mobile">
+                    <i class="fa-duotone fa-solid fa-phone"></i>
+                    <input type="text" name="mobile" placeholder="MOBILE">
+                </div>
+    
+                   <textarea rows="4" cols="34" name="address" placeholder="Fill your Address..."></textarea>
+                <br><br>
+    
+                <button type="submit">SIGN UP</button>
+            </form>
+        </div>
+</body>
+{% if messages %}
+     {% for message in messages %}
+         <script>
+             alert("{{ message }}");
+         </script>
+     {% endfor %}
+{% endif %}
+</html>

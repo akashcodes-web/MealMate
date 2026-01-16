@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show restaurants</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'restaurant.css' %}">
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Restaurant</th>
+                <th>Picture</th>
+                <th>Cuisine</th>
+                <th>Rating</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for r in restaurantList %}
+               <tr>
+                    <td>{{ r.name }}</td>
+                    <td>
+                        <img src="{{ r.picture }}" width="120px" height="120px">
+                    </td>
+                    <td>{{ r.cuisine }}</td>
+                    <td>{{ r.rating }}</td>
+
+                    <td>
+                        <a href="{% url 'open_update_restaurant' r.id %}">
+                            Update Restaurant Info
+                        </a>
+                        <br>
+
+                        <a href="{% url 'delete_restaurant' r.id %}" 
+                          onclick="return confirm('Are you sure you want to delete this restaurant?');">
+                            Delete Restaurant
+                        </a>
+                        <br>
+
+                        <a href="{% url 'open_update_menu' r.id %}">
+                            Update Menu
+                        </a>
+
+                    </td>
+               </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button onclick="window.location.href='{% url 'back' %}'">Back</button>
+</body>
+</html>

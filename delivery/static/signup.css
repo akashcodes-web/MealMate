@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: bgChange 35s infinite;
+  filter: brightness(0.8); /* replaces dark overlay */
+}
+
+@keyframes bgChange {
+    0% {
+        background-image: url("images/background.jpg");
+    }
+    16% {
+        background-image: url("images/bg2.avif");
+    }
+    32% {
+        background-image: url("images/bg3.jpg");
+    }
+    48% {
+        background-image: url("images/bg4.jpg");
+    }
+    64% {
+        background-image: url("images/bg5.jpg");
+    }
+    80% {
+        background-image: url("images/bg6.jpg");
+    }
+    100% {
+        background-image: url("images/bg7.jpeg");
+    }
+}
+
+
+
+
+.main {
+  width: min(90vw, 400px);
+  height: auto;
+  background: rgba(255, 255, 255, 0.15); 
+  border: 2px solid rgba(255, 255, 255, 0.15); 
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+}
+
+.main h3 {
+  margin: 10px 0px 15px 34%;
+  color: rgb(225, 155, 26);
+  width: 105px;
+  font-size: 25px;
+  background-color: yellow;
+}
+
+form {
+  margin-left: 15%;
+}
+
+form input {
+  width: 100%;
+  max-width: 250px;
+  margin: 10px 10px 20px 5px;
+  display: block;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+form input:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+  
+}
+
+/* ICON AUTO ALIGN */
+.username,
+.password,
+.email,
+.mobile {
+  position: relative;
+}
+
+.username i,
+.password i,
+.email i,
+.mobile i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #555;
+  pointer-events: none;
+}
+
+.username input,
+.password input,
+.email input,
+.mobile input {
+  padding-left: 38px;
+}
+
+
+
+textarea{
+  border-radius: 10px;
+  padding: 25px;
+  border: none;
+}
+
+button {
+  margin-left: 23%;
+  margin-bottom: 30px;
+  width: 80px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(225, 155, 26);
+  border: none;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: rgb(62, 199, 62);
+  color: white;
+}
+
+
+/*
+   MOBILE (max-width: 480px)
+ */
+@media (max-width: 480px) {
+
+  body {
+    height: auto;
+    padding: 12px;
+  }
+
+  .main {
+    width: 95vw;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .main h3 {
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  form {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form input {
+    width: 90%;
+    max-width: none;
+    margin: 10px 0 20px;
+  }
+
+textarea {
+  width: 100%;
+  max-width: 250px;
+  min-height: 120px;
+  padding: 16px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px 0 20px;
+  font-size: 15px;
+  resize: vertical;     
+  box-sizing: border-box;
+}
+
+  button {
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+
+/* 
+   TABLET (max-width: 768px)
+ */
+@media (max-width: 768px) {
+
+  .main {
+    width: 85vw;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .main h3 {
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  form {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form input {
+    width: 85%;
+    margin: 10px 0 20px;
+  }
+
+  textarea {
+    width: 85%;
+    min-height: 110px;
+    max-height: 200px;
+    padding: 18px;
+    font-size: 15px;
+    margin: 0 auto 20px;
+  }
+
+  button {
+    margin: 10px auto;
+  }
+}
+
+
+/*
+   SMALL LAPTOP (max-width: 1024px)
+*/
+@media (max-width: 1024px) {
+
+  .main {
+    width: min(80vw, 420px);
+    height: auto;
+  }
+
+  form {
+    margin-left: 0;
+  }
+
+  textarea {
+    width: calc(100% - 40px);
+    min-height: 130px;
+    max-height: 260px;
+    font-size: 16px;
+    resize: vertical;
+  }
+}
+
+
+@media (hover: none) {
+  form input:hover,
+  button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

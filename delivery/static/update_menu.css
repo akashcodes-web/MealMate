@@ -1,0 +1,187 @@
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ===== Page Layout ===== */
+body {
+    background-color: #f4f6f9;
+    padding: 30px;
+}
+
+/* ===== Table Styling ===== */
+table {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Header */
+thead {
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+th {
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Table Body */
+td {
+    padding: 14px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+tbody tr:hover {
+    background-color: #f1f7ff;
+    transition: background-color 0.3s ease;
+}
+
+/* Food Image */
+td img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* ===== Form Section ===== */
+h2 {
+    margin: 40px auto 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Labels */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+/* Inputs */
+form input[type="text"],
+form input[type="number"],
+form input[type="url"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Checkbox */
+form input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-left: 5px;
+}
+
+/* Submit Button */
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+/* Veg / Non-Veg display */
+.food-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Icon size */
+.food-type img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Labels */
+.veg-label {
+    color: #198754;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.nonveg-label {
+    color: #dc3545;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    td img {
+        width: 90px;
+        height: 90px;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
+
+.btn {
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+@media (max-width: 480px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,132 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page background */
+body {
+    background: #f4f6f8;
+    padding: 30px;
+    color: #333;
+}
+
+/* Greeting text */
+.cart-user {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Cart table */
+.cart-table {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Table header */
+.cart-table thead {
+    background: #ff6f00;
+    color: #fff;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 14px 16px;
+    text-align: center;
+}
+
+/* Rows */
+.cart-table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+.cart-table tbody tr:hover {
+    background: #fafafa;
+}
+
+/* Item image */
+.cart-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Total price section */
+.total-price {
+    max-width: 1100px;
+    margin: 20px auto 10px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Checkout button */
+.checkout-form {
+    max-width: 1100px;
+    margin: auto;
+    text-align: right;
+}
+
+.checkout-form input[type="submit"] {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.checkout-form input[type="submit"]:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+
+.btn {
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+}  
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cart-table th,
+    .cart-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cart-table img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .total-price {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .checkout-form {
+        text-align: center;
+    }
+
+}
+
+

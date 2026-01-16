@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'signin.css' %}">
+</head>
+<body>
+    <div class="main">
+        <h3>SIGN IN</h3>
+        <div class="welcome">
+            <img src="{% static 'images/hii1.png' %}">
+        </div>
+        <form action="{% url 'signin' %}" method="post">
+            {% csrf_token %}
+            <div class="username">
+                <i class="fa-duotone fa-solid fa-user"></i>
+                <input type="text" name="username" placeholder="USERNAME">
+            </div>
+            <div class="password">
+                <i class="fa-duotone fa-solid fa-lock"></i>
+                <input type="password" name="password" placeholder="PASSWORD">
+            </div>
+            <button type="submit">SIGN IN</button>
+        </form>
+   </div>
+</body>
+{% if messages %}
+     {% for message in messages %}
+         <script>
+             alert("{{ message }}");
+         </script>
+     {% endfor %}
+ {% endif %}
+</html>

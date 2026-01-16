@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Page</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'customer.css' %}">
+</head>
+<body>
+
+<a href="{% url 'show_cart' username %}" class="cart-link">
+    <i class="fa-duotone fa-solid fa-cart-arrow-down"></i>
+</a>
+
+<a href="{% url 'logout' %}" class="log">
+    <i class="fa-duotone fa-solid fa-arrow-right-from-bracket"></i>
+</a>
+
+<div class="container">
+    <h1 class="title">
+        Welcome {{ username }} 👋
+    </h1>
+    <p class="subtitle">Discover top restaurants & order your favorite food</p>
+
+    <div class="card-grid">
+        {% for r in restaurantList %}
+        <div class="restaurant-card">
+
+            <div class="image-wrapper">
+                <img src="{{ r.picture }}" alt="{{ r.name }}">
+                <span class="rating">⭐ {{ r.rating }}</span>
+            </div>
+
+            <div class="card-content">
+                <h3>{{ r.name }}</h3>
+                <span class="tag {{ r.cuisine|lower }}">{{ r.cuisine }}</span>
+
+                <a href="{% url 'view_menu' r.id username %}" class="btn">View Menu</a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

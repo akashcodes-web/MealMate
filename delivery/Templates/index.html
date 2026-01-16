@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class= "row">
+        <div class="head">
+           <h3>Welcome to Meal Mate!</h3>
+        </div>
+        <div class="slider">
+            <img src="{% static 'images/img1.jpg' %}">
+            <img src="{% static 'images/img2.jpg' %}">
+            <img src="{% static 'images/img5.jpg' %}">
+            <img src="{% static 'images/img6.jpg' %}">
+        </div>
+
+        <div class="sign">
+                <a href="open_signup">SIGN UP</a>
+                <a href="open_signin">SIGN IN</a>
+        </div>
+    </div>
+</body>
+</html>
